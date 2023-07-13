@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MiniCore.Models.Informe>
+
+<h1>Informes por Rango de Fechas</h1>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>InformeId</th>
+                <th>Fecha</th>
+                <th>Resultado</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var informe in Model)
+            {
+                <tr>
+                    <td>@informe.InformeId</td>
+                    <td>@informe.Fecha</td>
+                    <td>@informe.Resultado</td>
+                    <td>@informe.Detalles</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No se encontraron informes en el rango de fechas especificado.</p>
+}
